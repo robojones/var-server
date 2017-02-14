@@ -3,13 +3,13 @@
 This module provides you with a simple server http server.
 It can be used to write tests e.g. for worker processes in a cluster.
 
-## In the process
+## In the worker process
 
 ```javascript
 require('var-server')(8080).listen()
 ```
 
-The server listens on `127.0.0.1`, so it is only accessible on the same computer.
+__Note:__ The server listens on `127.0.0.1`, so it is only accessible on the same computer.
 
 ## In the test file
 
