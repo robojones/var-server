@@ -17,11 +17,8 @@ module.exports = function setup(port) {
         })
         req.on('end', () => {
           let code = body.join('')
-          if(code.indexOf('global.') !== 0) {
-            code = 'global.' + code
-          }
           try {
-            const value = eval(code)
+            const value = global.eval(code)
             let string = ''
             if(value !== undefined) {
               string = CircularJSON.stringify(value)
